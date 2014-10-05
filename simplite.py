@@ -25,15 +25,27 @@ class Simplite:
 	def insert(self,table_name,data):
 		self.data = data
 		self.db.execute("INSERT INTO {} values({})".format(table_name,self.data))
+		self.db.commit()
 
 	#remove items
 	def remove(self,table_name,where="1"):
 		self.where = where
 		self.db.execute("DELETE FROM {} WHERE {}".format(table_name,self.where))
+		self.db.commit()
 
 	#get items from db
-	def get_items(self,table_name,where):
-		self.where = where
-		return self.db.execute("SELECT * FROM {} WHERE {}".format(table_name,self.where))
+	def get_items(self,table_name,where=1):
+		if(table_name!=1) :
+			self.where = where
+			self.items = self.db.execute("SELECT * FROM {} WHERE {}".format(table_name,self.where))
+			self.db.commit()
+			return list(self.items)
+		else :
+			return {}
+
+	def close_connection(self):
+		self.db.close()
+
+		
 
 
