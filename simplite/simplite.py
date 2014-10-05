@@ -1,3 +1,11 @@
+# -*- coding: utf-8 -*-
+"""
+	simplite.py
+	~~~~~~~~~
+	:copyright: (c) 2014 by Dariush Abbasi.
+	:license: MIT, see LICENSE for more details.
+"""
+
 import sqlite3
 
 #Intract with sqlite3 in python as simple as it can be.
