@@ -57,6 +57,11 @@ class Simplite:
 		else :
 			return {}
 
+	#return list of tables
+	def get_tables(self):
+		self.tables = self.db.execute("SELECT name FROM sqlite_master")
+		return list(self.tables)
+
 	#close database connection
 	def close_connection(self):
 		self.db.close()
