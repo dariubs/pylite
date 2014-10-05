@@ -10,6 +10,5 @@ setup(name='simplite',
       url='http://edrock.github.io/simplite.py',
       packages=['simplite'],
       package_dir={'simplite': 'simplite'},
-      license='MIT',
-      keywords = ['sqlite', 'database'],
+      license='MIT'
      )
