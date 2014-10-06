@@ -3,7 +3,7 @@ simplite
 Intract with sqlite3 in python as simple as it can be.
 
 
-simple tips
+Tips
 ----
 
 Import simplite :
@@ -47,6 +47,12 @@ Get all tables name :
 ```python
 db.get_tables()
 ```
+Execute your sqlite queries:
+
+```python
+db.query('your query')
+```
+
 Close connection :
 
 ```python
