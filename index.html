@@ -1,0 +1,88 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Simplite.py</title>
+<meta name="description" content="Intract with sqlite3 in python as simple as it can be.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+<link rel="stylesheet" href="static/css/foundation.min.css">
+<link rel="stylesheet" href="static/css/normalize.css">
+<link rel="stylesheet" href="static/css/main.css">
+</head>
+<body>
+<!--[if lt IE 8]>
+	<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- Add your site or application content here -->
+<div id="header" class="row">
+	<h1>Simplite.py</h1>
+	<p>Intract with sqlite3 in python as simple as it can be.</p>
+</div>
+<div id="main" class="row">
+	
+		<a href="https://github.com/edrock/simplite.py" class="button radius small success">Github Repository</a>
+
+	<h1>Tips</h1>
+	<h2>Import simplite :</h2>
+
+	<code>
+	from simplite import Simplite
+	</code>
+
+	<h2>Create a new database or open an existing database :</h2>
+
+	<code>
+	db = Simplite('dbname')
+	</code>
+
+	<h2>Add a table :</h2>
+
+	<code>
+	db.add_table('table_name',column1='datatype',column2='datatype',...,columnN='datatype')
+	</code>
+
+	<h2>Insert data :</h2>
+
+	<code>
+	db.insert('table_name','column1_value','column2_value',...,'columnN_value')
+	</code>
+
+	<h2>Remove items :</h2>
+
+	<code>
+	db.remove('table_name','condition')
+	</code>
+
+	<h2>Retrieve items :</h2>
+
+	<code>
+	db.get_items('table_name','condition')
+	</code>
+
+	<h2>Get all tables name :</h2>
+
+	<code>
+	db.get_tables()
+	</code>
+
+	<h2>Execute your sqlite queries:</h2>
+
+	<code>
+	db.query('your query')
+	</code>
+
+	<h2>Close connection :</h2>
+
+	<code>
+	db.close_connection()
+	</code>
+</div>
+<div id="footer" class="row">
+	<p>Copyright (c) 2014 <a href="http://edrock.github.io">Dariush Abbasi</a>.License under MIT License.</p>
+</div>
+
+</body>
+</html>
