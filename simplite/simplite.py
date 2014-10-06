@@ -70,6 +70,11 @@ class Simplite:
 		self.tables = self.db.execute("SELECT name FROM sqlite_master")
 		return list(self.tables)
 
+	#execute sqlite query's
+	def query(self,query_string):
+		self.db.execute(query_string);
+		self.db.commit()
+
 	#close database connection
 	def close_connection(self):
 		self.db.close()
