@@ -44,6 +44,20 @@ class Simplite:
 		self.db.commit()
 
 
+	#add
+	#first argument is insertion type : 'table' or 'data'
+	#second argument is table name
+	def add(self,insertion_type,table_name,**columns):
+		if (insertion_type == 'table'):
+			self.cols = ""
+
+			for col_name,col_type in columns.items():
+				self.cols += col_name+" "+col_type+","
+			self.cols = self.cols[0:len(self.cols)-1]
+
+			self.db.execute("CREATE TABLE IF NOT EXISTS {}({})".format(table_name,self.cols))
+
+
 	#remove items
 	#first argument is table name
 	#second argument is condition
