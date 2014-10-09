@@ -12,9 +12,10 @@ import sqlite3
 class Simplite:
 
 	#first argument is name of database that store in same name file on disk
-	def __init__(self,db_name):	
+	def __init__(self,db_name,default_table=1):	
 		self.db_name = db_name
 		self.db = sqlite3.connect(db_name)
+		self.default_table = default_table
 
 
 	#Add table
@@ -56,6 +57,7 @@ class Simplite:
 			self.cols = self.cols[0:len(self.cols)-1]
 
 			self.db.execute("CREATE TABLE IF NOT EXISTS {}({})".format(table_name,self.cols))
+			
 
 
 	#remove items
@@ -65,6 +67,19 @@ class Simplite:
 		self.where = where
 		self.db.execute("DELETE FROM {} WHERE {}".format(table_name,self.where))
 		self.db.commit()
+
+	#update items values
+	#first argument is table name
+	#second argument is condition
+	#third argument is dictionaury of table column names and values
+	def update(self,table_name,where,**columns):
+		self.cols = ""
+
+		for col_name,col_type in columns.items():
+			self.cols += col_name+" "+col_type+","
+		self.cols = self.cols[0:len(self.cols)-1]
+
+		self.db.execute("UPDATE {} SET {} where {}".format(table_name,self.cols,where))
 
 
 	#get items from db
