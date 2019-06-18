@@ -1,21 +1,27 @@
-simplite
+pylite
 ====
 Intract with sqlite3 in python as simple as it can be.
 
+Install
+-------
+
+```shell
+pip install pylite
+```
 
 Tips
 ----
 
-Import simplite :
+Import pylite :
 
 ```python
-from simplite import Simplite
+from pylite import Pylite
 ```
 
 Create a new database or open an existing database :
 
 ```python
-db = Simplite('dbname')
+db = Pylite('dbname')
 ```
 
 Add a table :

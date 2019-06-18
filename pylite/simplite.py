@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-	simplite.py
+	pylite
 	~~~~~~~~~
 	:copyright: (c) 2014 by Dariush Abbasi.
 	:license: MIT, see LICENSE for more details.
@@ -9,10 +9,10 @@
 import sqlite3
 
 #Intract with sqlite3 in python as simple as it can be.
-class Simplite:
+class Pylite:
 
 	#first argument is name of database that store in same name file on disk
-	def __init__(self,db_name,default_table=1):	
+	def __init__(self,db_name,default_table=1):
 		self.db_name = db_name
 		self.db = sqlite3.connect(db_name)
 		self.default_table = default_table
@@ -57,7 +57,7 @@ class Simplite:
 			self.cols = self.cols[0:len(self.cols)-1]
 
 			self.db.execute("CREATE TABLE IF NOT EXISTS {}({})".format(table_name,self.cols))
-			
+
 
 
 	#remove items
